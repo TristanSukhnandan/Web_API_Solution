@@ -7,11 +7,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.PageFactory;
+
+import pageObjects.CareersSA_Page;
+import pageObjects.Careers_Page;
+import pageObjects.CurrentOpenings_Page;
+import pageObjects.JobDetails_Page;
 
 public class DriverFactory {
 	public static WebDriver driver;
+	public static Careers_Page careersPage;
+	public static CareersSA_Page careersSAPage;
+	public static CurrentOpenings_Page currentOpeningsPage;
+	public static JobDetails_Page jobDetailsPage;
 	
-	public WebDriver getDriver() throws Exception {
+	public WebDriver getDriver() {
 		try {		
 			// ReadConfigFile
 			ReadConfigFile file = new ReadConfigFile();
@@ -46,6 +56,10 @@ public class DriverFactory {
 		} finally {
 
 			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+			  		careersPage = PageFactory.initElements(driver, Careers_Page.class);
+			  	  careersSAPage = PageFactory.initElements(driver, CareersSA_Page.class);
+			currentOpeningsPage = PageFactory.initElements(driver, CurrentOpenings_Page.class);
+			     jobDetailsPage = PageFactory.initElements(driver, JobDetails_Page.class);
 
 		}
 		return driver;

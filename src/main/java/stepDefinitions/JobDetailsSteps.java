@@ -4,8 +4,9 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import utils.DriverFactory;
 
-public class JobDetailsSteps {
+public class JobDetailsSteps extends DriverFactory{
 	@Given("^I am on the ilab job details page$")
 	public void i_am_on_the_ilab_job_details_page()  {
 
