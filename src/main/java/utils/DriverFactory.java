@@ -9,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 
+import pageObjects.BasePage;
 import pageObjects.CareersSA_Page;
 import pageObjects.Careers_Page;
 import pageObjects.CurrentOpenings_Page;
@@ -20,6 +21,7 @@ public class DriverFactory {
 	public static CareersSA_Page careersSAPage;
 	public static CurrentOpenings_Page currentOpeningsPage;
 	public static JobDetails_Page jobDetailsPage;
+	public static BasePage basepage;
 	
 	public WebDriver getDriver() {
 		try {		

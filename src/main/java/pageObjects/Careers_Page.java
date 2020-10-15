@@ -20,7 +20,7 @@ public class Careers_Page extends BasePage{
 		return new Careers_Page();
 	}
 	
-	public Careers_Page getCareersHyperlink() throws Exception{
+	public Careers_Page selectCareersHyperlink() throws Exception{
 		waitAndClickElement(hyperlink_Careers);
 		return new Careers_Page();
 	}
