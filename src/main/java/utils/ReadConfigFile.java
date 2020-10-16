@@ -6,11 +6,11 @@ import java.util.Properties;
 
 public class ReadConfigFile {
 	protected InputStream input = null;
-	protected Properties  prop = null;
+	protected Properties prop = null;
 	
-	public ReadConfigFile(){
-		try{
-			ReadConfigFile.class.getClassLoader().getResourceAsStream(Constant.CONFIG_PROPERTIES_DRECTORY);
+	public ReadConfigFile() {
+		try {
+			input = ReadConfigFile.class.getClassLoader().getResourceAsStream(Constant.CONFIG_PROPERTIES_DRECTORY);
 			prop = new Properties();
 			prop.load(input); 
 			
