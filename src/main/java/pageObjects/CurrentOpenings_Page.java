@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 public class CurrentOpenings_Page extends BasePage{
 	
 	public @FindBy(linkText = "CAREERS") WebElement hyperlink_Careers;
-	public @FindBy(linkText = "Interns - BSC Computer Science, National Diploma: IT Development Graduates") WebElement hyperlink_job;
+	public @FindBy(css = ".wpjb-grid-row:nth-child(1) .wpjb-job_title") WebElement hyperlink_job;
 	public @FindBy(xpath = "//h1[contains(text(),'Interns')]") WebElement jobHeader;
 
 	public CurrentOpenings_Page() throws IOException {

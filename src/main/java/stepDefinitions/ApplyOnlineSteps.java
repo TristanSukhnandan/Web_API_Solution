@@ -2,7 +2,6 @@ package stepDefinitions;
 
 import java.io.IOException;
 
-import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -11,7 +10,7 @@ import utils.DriverFactory;
 
 public class ApplyOnlineSteps extends DriverFactory{
 	
-	@Given("^I access iLabURL$")
+	@Given("^I access iLabquality website$")
 	public void i_access_iLabURL() throws IOException {
 		careersPage.getCareersPage();  	
 	    
@@ -52,28 +51,28 @@ public class ApplyOnlineSteps extends DriverFactory{
 		jobDetailsPage.clickOnApplyOnlineButton(); 
 	}
 
-	@And("^I enter a \"([^\"]*)\"$")
-	public void i_enter_a(DataTable dataTable) throws Exception {
-		jobDetailsPage.enterFirstName(dataTable, 0, 1);
+	@And("^I enter a first name \"([^\"]*)\"$")
+	public void i_enter_a(String Firstname) throws Exception {
+		jobDetailsPage.enterFirstName(Firstname);
 	}
 
-	@And("^I enter a \"([^\"]*)\" address$")
-	public void i_enter_a_address(DataTable dataTable) throws Exception {
-		jobDetailsPage.enterEmailAddress(dataTable, 0, 1);
+	@And("^I enter an email \"([^\"]*)\" address$")
+	public void i_enter_a_address(String Email) throws Exception {
+		jobDetailsPage.enterEmailAddress(Email);
 	}
 
-	@And("^I enter a \"([^\"]*)\" number$")
-	public void i_enter_a_number(String arg1) {
-		 System.out.println("Test");
+	@And("^I enter an phone number$")
+	public void i_enter_a_number() throws Exception {
+		 jobDetailsPage.enterPhone();
 	}
 
-	@And("^I enter click send buttton$")
+	@And("^I enter click send button$")
 	public void i_enter_click_send_buttton() throws Exception {
 		 jobDetailsPage.clickOnSubmitButton();
 	}
 
 	@Then("^I should be presented with the validation alert message$")
-	public void i_should_be_presented_with_the_validation_alert(String arg1) throws Exception {
+	public void i_should_be_presented_with_the_validation_alert() throws Exception {
 		 jobDetailsPage.validationErrorMessage();
 	}
 
