@@ -9,5 +9,5 @@ public class Constant {
 	
 	public final static String CHROME_DRIVER_DRECTORY = System.getProperty("user.dir") + "\\src\\test\\java\\resources\\other\\chromedriver.exe";
 	
-	
+	public final static String CSV_DIRECTORY = System.getProperty("user.dir") + "\\src\\test\\java\\resources\\other\\testdata.csv";
 }

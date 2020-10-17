@@ -10,8 +10,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import cucumber.api.DataTable;
-
 public class JobDetails_Page extends BasePage{
 	
 	public @FindBy(linkText = "Apply Online") WebElement button_ApplyOnline;
@@ -21,6 +19,9 @@ public class JobDetails_Page extends BasePage{
 	public @FindBy(id = "message") WebElement textfield_Message;
 	public @FindBy(id = "wpjb_submit") WebElement button_Submit;
 	public @FindBy(css = ".wpjb-element-input-file li") WebElement validationTag;
+	
+	public String email_V;
+	public String name_V;
 	
 	public JobDetails_Page() throws IOException {
 		super();
@@ -44,6 +45,19 @@ public class JobDetails_Page extends BasePage{
 		return new JobDetails_Page();
 	
 	}
+	
+	public JobDetails_Page enterFirstName_V(String firstname) throws Exception {
+		sendKeysToWebElement(textfield_FirstName,email_V);
+		return new JobDetails_Page();
+	}
+	
+	
+	public JobDetails_Page enterEmailAddress_V(String email) throws Exception {
+		sendKeysToWebElement(textfield_EmailAddress, email_V);
+		return new JobDetails_Page();
+	
+	}
+	
 	
 	public JobDetails_Page enterPhone() throws Exception {
 		
