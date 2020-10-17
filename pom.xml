@@ -168,5 +168,8 @@
 
 	</dependencies>
 	<packaging>pom</packaging>
+	<modules>
+		<module>API</module>
+	</modules>
 </project>
 	
