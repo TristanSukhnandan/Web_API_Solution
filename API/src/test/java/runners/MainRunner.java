@@ -8,11 +8,11 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @RunWith(Cucumber.class)
 
-@CucumberOptions(	features = { "src/test/java/resources/features/" }, 
+@CucumberOptions(	features = { "src/test/java/features/" }, 
 				       	glue = { "stepDefinitions" }, 
 				  monochrome = true, 
-				     	tags = {"@iLab_Assessment"}, 
-				      plugin = { "pretty", "html:output/Web_cucumber", "json:output/Web_cucumber.json","com.cucumber.listener.ExtentCucumberFormatter:output/Web_report.html" }
+				     	tags = {}, 
+				      plugin = { "pretty", "html:output/API_cucumber", "json:output/API_cucumber.json","com.cucumber.listener.ExtentCucumberFormatter:output/API_report.html" }
 				)
 
 public class MainRunner extends AbstractTestNGCucumberTests{
