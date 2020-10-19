@@ -1,16 +1,7 @@
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-
 import static io.restassured.RestAssured.*;
-import io.restassured.response.Response;
-import net.bytebuddy.implementation.bytecode.assign.Assigner.EqualTypesOnly;
-import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
-
-import org.jsoup.select.Evaluator.ContainsText;
-import org.openqa.selenium.support.FindAll;
 
 public class DogsCEO {
 
@@ -40,19 +31,33 @@ public class DogsCEO {
 	@Test
 	public void test_3(){
 		
-		Response res = get("https://dog.ceo/api/breed/bulldog/images");
+//		Response res = get("https://dog.ceo/api/breed/bulldog/images");
+//		
+//		System.out.println(res.asString());
+//		System.out.println(res.getBody().asString());
+//		System.out.println(res.getStatusCode());
+//		System.out.println(res.getStatusLine());
+//		System.out.println(res.getTime());
+//		
+//		String body = res.getBody().asString();
+//		
+//		Assert.assertTrue(body.contains("boston"));
+//		Assert.assertTrue(body.contains("english"));
+//		Assert.assertTrue(body.contains("french"));
 		
-		System.out.println(res.asString());
-		System.out.println(res.getBody().asString());
-		System.out.println(res.getStatusCode());
-		System.out.println(res.getStatusLine());
-		System.out.println(res.getTime());
 		
-		String body = res.getBody().asString();
+	given().
+	with().
+		pathParam("post", "bulldog").
+	when().	
+		get("https://dog.ceo/api/breed/{post}/images").
+	then().
+		statusCode(200).
+		body(containsString("english"),containsString("english")).
+		body(containsString("french"),containsString("french")).
+		body(containsString("boston"),containsString("boston")).
+		 log().all();		
 		
-		Assert.assertTrue(body.contains("boston"));
-		Assert.assertTrue(body.contains("english"));
-		Assert.assertTrue(body.contains("french"));
 	}
-	
+		
 }
