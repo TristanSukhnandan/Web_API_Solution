@@ -12,7 +12,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				       	glue = { "stepDefinitions" }, 
 				  monochrome = true, 
 				     	tags = {}, 
-				      plugin = { "pretty", "html:target/cucumber", "json:target/cucumber.json","com.cucumber.listener.ExtentCucumberFormatter:output/report.html" }
+				      plugin = { "pretty", "html:output/API_cucumber", "json:output/API_cucumber.json","com.cucumber.listener.ExtentCucumberFormatter:output/API_report.html" }
 				)
 
 public class MainRunner extends AbstractTestNGCucumberTests{

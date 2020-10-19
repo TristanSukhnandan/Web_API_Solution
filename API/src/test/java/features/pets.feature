@@ -32,6 +32,13 @@ Scenario: Verify pet with name of doggie is present with ID of 12
 @testFive
 Scenario: Add a new pet with auto generated name and available status
 	Given I access petstore pet endpoint
-	 When I enter param
-	 Then I should get a Success response showing available pets
+	 When I enter and submit the pet details
+	 Then I should get a Success response showing the pet is added
+	 
+	 
+@testSix
+Scenario: Verify if new pet was added 
+	Given I access petstore find pet endpoint
+	 When I enter the pet id
+	 Then I should get a Success response showing the pet is found	 
 	 	 	 	 	 	 

@@ -57,25 +57,19 @@ public class PetStore {
 	@Test
 	public void test_2(){
 		
-		 
 		 dogname = "Pet" + getRandomNum + "Dog";
 			
 		Map<String, Object> Categorydetails = new HashMap<>();
 		Categorydetails.put("id", getRandomNum);  
 		Categorydetails.put("name", dogname);
-
 		
 		List<Map<String, Object>> Tag = new ArrayList<>();
 		Map<String, Object> Tagdetails = new HashMap<>();
 		Tagdetails.put("id", getRandomNum);
 		Tagdetails.put("name", dogname);  
-		Tag.add(Tagdetails);
+		Tag.add(Tagdetails);	
 		
-		
-		
-		String[] photourls = {"String"};
-		
-		
+		String[] photourls = {"String"};	
 		
 		Map<String, Object> maps = new LinkedHashMap<String, Object>(); 
 		maps.put("id", getRandomNum);
@@ -88,8 +82,7 @@ public class PetStore {
 				Gson gson = new Gson();
 				
 				String jsonp = gson.toJson(maps);
-				//JSONObject request = new JSONObject(maps);
-				System.out.println(jsonp);
+				//System.out.println(jsonp);
 				
 				given().
 						header("Content-Type","application/json").
@@ -101,7 +94,6 @@ public class PetStore {
 				then().
 						statusCode(200).
 						log().all();        			
-
 	}
 	
 	

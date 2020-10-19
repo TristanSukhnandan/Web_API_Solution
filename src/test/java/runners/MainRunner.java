@@ -12,7 +12,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				       	glue = { "stepDefinitions" }, 
 				  monochrome = true, 
 				     	tags = {"@iLab_Assessment"}, 
-				      plugin = { "pretty", "html:target/cucumber", "json:target/cucumber.json","com.cucumber.listener.ExtentCucumberFormatter:output/report.html" }
+				      plugin = { "pretty", "html:output/Web_cucumber", "json:output/Web_cucumber.json","com.cucumber.listener.ExtentCucumberFormatter:output/Web_report.html" }
 				)
 
 public class MainRunner extends AbstractTestNGCucumberTests{
